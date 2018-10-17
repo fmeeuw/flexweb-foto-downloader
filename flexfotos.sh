@@ -136,6 +136,6 @@ for ((year=start_year; year < end_year; year++)); do
 done
 
  # Rename all fotos so they start with the date part.
- exiftool "-FileName<CreateDate" -d "%Y-%m-%d_%%f.%%e" ${target_dir}
+ exiftool -overwrite_original "-FileName<CreateDate" -d "%Y-%m-%d_%%f.%%e" .
  # Organize files in a directory hiearchy, a directory per year and per month.
- exiftool "-directory<CreateDate" -d "%Y/%Y-%m" ${target_dir}
+ exiftool -overwrite_original "-directory<CreateDate" -d "%Y/%Y-%m" .
